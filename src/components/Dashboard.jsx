@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Card2 from './Card2'
 import NavbarAdm from '../components/NavbarAdm'
 import '../App.css'
-import pic25 from '../assets/pic26.jpg'
+import Pic1 from '../assets/pic26.jpg'
 import Footer from '../pages/Footer'
 
 
@@ -52,26 +52,24 @@ export function Dashboard() {
             
             {/* <section className='hero'> */}
              <div className='Trending'>
-                <h><strong>Chart</strong><u>-tren</u><i>ding</i></h><br/>
+               
                 </div><br/><br/>
                 
-             <div className="contn">
-           
-          
-       
-
-
+                <div className="contn-Home">
                 
-            <div className="leftsd">
-            <img src={pic25} className='imagee'/>
-            </div>
-            <div className="rightsd">
-            <h><strong>Business,Travel </strong>- octob.2023</h><br /><br/>
-            <h4><strong>‘Something’s going on here’: SA Startup Week connects founders to resources, inspiration and real talk</strong></h4><br />
-            <p>Awareness emerged as an early theme as would-be fledgling and established entrepreneurs gathered for San Antonio Startup Week on Monday morning on the 24th floor of Frost Tower, 
-                with its 360-degree views of downtown and beyond.</p>
-            </div> 
-            </div>
+           
+                {/* <img src={pic25} className='imagee'/> */}
+                <img src ={Pic1} className='pice'/>
+                <div className="leftsde">
+                <h><strong>Business,Travel </strong>- octob.2023</h><br /><br/>
+                </div>
+                <div className="rightsiede">
+                
+                <h4><strong>‘Something’s going on here’: SA Startup Week connects founders to resources, inspiration and real talk</strong></h4><br />
+                <p>Awareness emerged as an early theme as would-be fledgling  
+                    with its 360-degree views of downtown and beyond.</p>
+                </div>
+                </div>
 
             {/* </section>
 

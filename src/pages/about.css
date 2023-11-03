@@ -53,7 +53,7 @@ background: #c7dee2;
     margin-bottom:35px;
 }
 .container{
-    width:90%;
+    width:80%;
     margin:0 auto;
     /* margin-top:-30%; */
     padding:10px 20px;
@@ -125,7 +125,7 @@ background: #c7dee2;
  
     @media screen and (max-width:768px){
         .heading{
-            padding:8px 20px;
+            padding:2px 20px;
         }
         .heading h1{
             font-size:26px;
@@ -142,10 +142,13 @@ background: #c7dee2;
             margin-bottom: 0px;
         }
         .container{
-            padding:0px;
+            padding:0 20px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
         }
         .about{
-            padding:28px;
+            padding:18px;
             flex-direction: column;
         }
         .about-image{
