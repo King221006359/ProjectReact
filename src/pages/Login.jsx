@@ -9,27 +9,23 @@ import {BiSolidUserCircle} from "react-icons/bi"
 import {RiLockPasswordFill} from "react-icons/ri"
 // export function Login({ setModalOpen}) {
   export function Login() {
-const navigate = useNavigate()
-  const [email,setEmail] = useState('');
-  const [password,setPassword] = useState('');
- 
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
   
-  const LoginData = {
+    const data = {
+      email,
+      password,
+    };
   
-    email ,
-    password ,
-   
-  
-  };
-  
-  const handlesignin = async (data) => {
-    try {
+    const handlesignin = async (data) => {
+      try {
         const response = await fetch('https://klab-blog-api.onrender.com/Blog/API/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data), // Use FormData directly without wrapping it in an object
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
         });
   
         if (response.ok) {
@@ -37,11 +33,16 @@ const navigate = useNavigate()
           console.log("response", data);
           localStorage.setItem("token", data.token);
           alert("Sign IN successfully");
-          if (data.role === "admin") {
-            window.location = "/Dashboard";
+          console.log("role",data.users.role);
+
+          
+  
+          if (data.users.role === "admin") {
+            navigate("/Dashboard"); // Redirect to the admin dashboard
           } else {
-            window.location = "/Dashboard";
+            navigate("/"); // Redirect to the user dashboard
           }
+  
           setEmail("");
           setPassword("");
         } else {
@@ -55,6 +56,7 @@ const navigate = useNavigate()
         console.log("error", error);
       }
     };
+  
 
 
 
@@ -95,8 +97,8 @@ return (
             <input type="Password" placeholder='Enter your password...' className='input' value={password} onChange={(e) => setPassword(e.target.value)}/><br/><br />
             <button type="submit" className='btn' onClick= {(e)=>  {
                 e.preventDefault()
-                handlesignin(LoginData)
-                navigate('/Dashboard')
+                handlesignin(data)
+                // navigate('/Dashboard')
             }}
   
   >
